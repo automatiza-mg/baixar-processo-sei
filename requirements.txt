@@ -1,0 +1,7 @@
+ipdb==0.13.13
+python-dotenv==1.0.1
+suds==1.2.0
+requests==2.32.3
+selenium==4.25.0
+pyinstaller==6.10.0
+taskipy==1.13.0

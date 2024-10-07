@@ -1,0 +1,3 @@
+[tool.taskipy.tasks]
+baixar = { cmd = "python main.py", help = "Baixa processo." }
+exe = { cmd = "pyinstaller main.py --onefile", help = "Cria/Atualiza executável para Power Automate." } 
