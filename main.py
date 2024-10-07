@@ -14,15 +14,15 @@ def consultar_procedimento(**kwargs):
         'IdentificacaoServico': kwargs['API_SEI_TOKEN'],
         'IdUnidade': kwargs['API_SEI_UNIDADE'],
         'ProtocoloProcedimento': kwargs['API_SEI_PROCESSO'],
-        'SinRetornarAssuntos': 'S',
-        'SinRetornarInteressados': 'S',
-        'SinRetornarObservacoes': 'S',
-        'SinRetornarAndamentoGeracao': 'S',
-        'SinRetornarAndamentoConclusao': 'S',
-        'SinRetornarUltimoAndamento': 'S',
-        'SinRetornarUnidadesProcedimentoAberto': 'S',
-        'SinRetornarProcedimentosRelacionados': 'S',
-        'SinRetornarProcedimentosAnexados': 'S',
+        'SinRetornarAssuntos': 'N',
+        'SinRetornarInteressados': 'N',
+        'SinRetornarObservacoes': 'N',
+        'SinRetornarAndamentoGeracao': 'N',
+        'SinRetornarAndamentoConclusao': 'N',
+        'SinRetornarUltimoAndamento': 'N',
+        'SinRetornarUnidadesProcedimentoAberto': 'N',
+        'SinRetornarProcedimentosRelacionados': 'N',
+        'SinRetornarProcedimentosAnexados': 'N',
     }
     response = client.service.consultarProcedimento(**dict_call)
     return response
@@ -51,6 +51,7 @@ def download_documents(driver):
 def orquestrador(**kwargs):
     processo = consultar_procedimento(**kwargs)
     processo_url = str(processo.LinkAcesso)
+    import ipdb; ipdb.set_trace(context=10)
     driver = driver_initiate(processo_url)
     download_documents(driver)
 
