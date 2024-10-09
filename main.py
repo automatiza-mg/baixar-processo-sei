@@ -27,6 +27,9 @@ def consultar_procedimento(**kwargs):
         'SinRetornarProcedimentosAnexados': 'N',
     }
     response = client.service.consultarProcedimento(**dict_call)
+    # Para ver o envelope criado na última requisição
+    # Ideal para montar o robô no Automate
+    # print(response.last_sent())
     return response
 
 def driver_initiate(processo_url):
